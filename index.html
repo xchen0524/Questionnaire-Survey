@@ -9,53 +9,60 @@
   <title>问卷调查研究方法 | Questionnaire Survey</title>
 
   <style>
-    :root {
-      --sjtu-blue: #17365D;
-      --dark-blue: #102840;
-      --bg: #F6F8FB;
-      --text: #242631;
-      --muted: #687386;
-    }
-
+    /* 全局设置 */
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
       font-family: "Microsoft YaHei",
         "PingFang SC", Arial, sans-serif;
-      color: var(--text);
-      background: var(--bg);
+      color: #242631;
+      background-color: #E8EDF3;
       line-height: 1.6;
     }
 
     .container {
-      max-width: 1000px;
-      margin: auto;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* 顶部学院 Logo */
+    /* ======================
+       顶部学校及学院 Logo
+       ====================== */
+
     .site-header {
-      background: white;
-      border-bottom: 1px solid #eee;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #E5E7EB;
     }
 
     .brand-row {
-      min-height: 112px;
+      min-height: 115px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      padding-top: 16px;
-      padding-bottom: 16px;
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
     }
 
     .brand-logo {
       display: block;
-      max-width: min(100%, 460px);
-      max-height: 82px;
+      max-height: 75px;
+      max-width: 100%;
       width: auto;
       height: auto;
       object-fit: contain;
@@ -63,7 +70,7 @@
 
     .brand-note {
       text-align: right;
-      border-left: 2px solid var(--sjtu-blue);
+      border-left: 3px solid #0B1929;
       padding-left: 18px;
       flex-shrink: 0;
     }
@@ -71,99 +78,119 @@
     .brand-note strong {
       display: block;
       font-size: 16px;
+      color: #17212D;
     }
 
     .brand-note small {
-      color: var(--muted);
+      display: block;
+      margin-top: 4px;
+      color: #687386;
       font-size: 12px;
+      letter-spacing: 1px;
     }
 
-    /* 上海交通大学红色主题 */
+    /* ======================
+       暗蓝色主标题区域
+       ====================== */
+
     .hero {
-      background: var(--sjtu-blue);
-      color: white;
+      background-color: #0B1929;
+      color: #FFFFFF;
       text-align: center;
-      padding: 78px 20px 82px;
+      padding: 85px 20px 90px;
     }
 
     .hero .eyebrow {
       font-size: 13px;
-      letter-spacing: 2px;
-      opacity: 0.85;
+      letter-spacing: 3px;
+      color: #B4C5D6;
+      margin: 0 0 20px;
     }
 
     .hero h1 {
       font-size: clamp(30px, 5vw, 48px);
-      margin: 12px 0;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 10px 0 16px;
     }
 
     .hero .english {
-      font-size: 21px;
-      margin: 12px 0;
+      font-size: 22px;
+      color: #E6EDF5;
+      margin: 0 0 18px;
     }
 
     .hero .description {
       font-size: 15px;
-      opacity: 0.9;
-    }
-
-    /* 课程目录 */
-    .courses {
-      padding: 62px 0 80px;
-    }
-
-    .section-heading {
-      border-left: 5px solid var(--sjtu-blue);
-      padding-left: 16px;
-      margin-bottom: 28px;
-    }
-
-    .section-heading h2 {
-      font-size: 28px;
+      color: #B9CADB;
       margin: 0;
     }
 
+    /* ======================
+       课程目录区域
+       ====================== */
+
+    .courses {
+      background-color: #E8EDF3;
+      padding: 70px 0 85px;
+    }
+
+    .section-heading {
+      border-left: 5px solid #0B1929;
+      padding-left: 18px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: 30px;
+      margin: 0;
+      color: #17212D;
+    }
+
     .section-heading p {
-      margin: 6px 0 0;
-      color: var(--muted);
+      margin: 8px 0 0;
+      color: #687386;
+      font-size: 16px;
     }
 
     .course-list {
       display: grid;
-      gap: 16px;
+      gap: 18px;
     }
 
+    /* 课程卡片 */
     .course-card {
       display: flex;
       align-items: center;
-      gap: 20px;
-      padding: 24px;
-      background: white;
-      border: 1px solid #e5e8ed;
+      gap: 22px;
+      padding: 26px;
+      background-color: #FFFFFF;
+      border: 1px solid #DCE3EB;
       border-radius: 14px;
-      color: var(--text);
+      color: #242631;
       text-decoration: none;
-      transition: 0.2s;
+      transition: all 0.2s ease;
     }
 
     .course-card:hover,
     .course-card:focus-visible {
-      border-color: var(--sjtu-blue);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 22px
-        rgba(16, 40, 64, 0.10);
+      border-color: #46617D;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px
+        rgba(11, 25, 41, 0.12);
     }
 
+    /* 课程编号 */
     .course-number {
-      flex: 0 0 58px;
-      width: 58px;
-      height: 58px;
+      flex: 0 0 62px;
+      width: 62px;
+      height: 62px;
       display: grid;
       place-items: center;
       border-radius: 12px;
-      background: #E8F0F7;
-      color: var(--sjtu-blue);
-      font-size: 20px;
+      background-color: #E9EFF4;
+      color: #0B1929;
+      font-size: 22px;
       font-weight: bold;
     }
 
@@ -173,41 +200,55 @@
     }
 
     .course-info h3 {
-      margin: 0 0 3px;
-      font-size: 19px;
+      margin: 0 0 4px;
+      font-size: 20px;
+      color: #17212D;
     }
 
     .course-info p {
       margin: 0;
-      color: var(--muted);
+      color: #687386;
       font-size: 14px;
     }
 
     .course-link {
-      color: var(--dark-blue);
-      font-weight: bold;
+      color: #14283D;
+      font-weight: 600;
       font-size: 14px;
       white-space: nowrap;
     }
 
+    /* ======================
+       网站底部
+       ====================== */
+
     footer {
       text-align: center;
-      padding: 22px;
-      background: white;
-      color: var(--muted);
+      padding: 26px 20px;
+      background-color: #FFFFFF;
+      border-top: 1px solid #E5E7EB;
+      color: #687386;
       font-size: 13px;
     }
 
-    /* 手机适配 */
+    /* ======================
+       手机与平板适配
+       ====================== */
+
     @media (max-width: 650px) {
+
       .brand-row {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 15px;
+      }
+
+      .logo-group {
+        gap: 15px;
       }
 
       .brand-logo {
-        max-width: 100%;
+        max-height: 55px;
       }
 
       .brand-note {
@@ -217,38 +258,77 @@
       }
 
       .hero {
-        padding: 58px 20px;
+        padding: 65px 20px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero .english {
+        font-size: 18px;
+      }
+
+      .courses {
+        padding: 45px 0 60px;
+      }
+
+      .section-heading h2 {
+        font-size: 26px;
       }
 
       .course-card {
-        padding: 17px;
+        padding: 18px;
         gap: 14px;
+        flex-wrap: wrap;
       }
 
       .course-number {
-        flex-basis: 46px;
-        width: 46px;
-        height: 46px;
+        flex-basis: 48px;
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+      }
+
+      .course-info h3 {
+        font-size: 17px;
       }
 
       .course-link {
-        font-size: 12px;
+        margin-left: 62px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- 顶部 Logo -->
+  <!-- ======================
+       顶部 Logo 区域
+       ====================== -->
+
   <header class="site-header">
+
     <div class="container brand-row">
 
-      <img
-        src="antai-logo.png"
-        alt="上海交通大学安泰经济与管理学院 Logo"
-        class="brand-logo"
-      >
+      <div class="logo-group">
+
+        <!-- 上海交通大学 Logo -->
+        <img
+          src="sjtu-logo.png"
+          alt="上海交通大学 Logo"
+          class="brand-logo"
+        >
+
+        <!-- 安泰经济与管理学院 Logo -->
+        <img
+          src="antai-logo.png"
+          alt="安泰经济与管理学院 Logo"
+          class="brand-logo"
+        >
+
+      </div>
 
       <div class="brand-note">
         <strong>课程教学平台</strong>
@@ -256,45 +336,70 @@
       </div>
 
     </div>
+
   </header>
 
-  <!-- 红色课程标题区域 -->
-  <section class="hero">
 
-    <p class="eyebrow">
-      SURVEY RESEARCH METHODS
-    </p>
+  <!-- ======================
+       暗蓝色课程标题
+       ====================== -->
 
-    <h1>问卷调查研究方法</h1>
+  <section class="hero"
+           style="background-color: #0B1929;">
 
-    <p class="english">
-      Questionnaire Survey
-    </p>
+    <div class="container">
 
-    <p class="description">
-      课程讲义 · 在线学习 · 研究实践
-    </p>
+      <p class="eyebrow">
+        SURVEY RESEARCH METHODS
+      </p>
+
+      <h1>问卷调查研究方法</h1>
+
+      <p class="english">
+        Questionnaire Survey
+      </p>
+
+      <p class="description">
+        课程讲义 · 在线学习 · 研究实践
+      </p>
+
+    </div>
 
   </section>
 
-  <!-- 课程目录 -->
+
+  <!-- ======================
+       课程目录
+       ====================== -->
+
   <main class="courses" id="courses">
+
     <div class="container">
 
       <div class="section-heading">
+
         <h2>课程目录</h2>
-        <p>选择课程章节，在线阅读教学课件</p>
+
+        <p>
+          选择课程章节，在线阅读教学课件
+        </p>
+
       </div>
+
 
       <div class="course-list">
 
-        <!-- 第一节课 -->
-        <a class="course-card"
-           href="session1.pdf"
-           target="_blank"
-           rel="noopener noreferrer">
+        <!-- Session 1 -->
+        <a
+          class="course-card"
+          href="session1.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
 
-          <span class="course-number">01</span>
+          <span class="course-number">
+            01
+          </span>
 
           <span class="course-info">
             <h3>Session 1</h3>
@@ -307,13 +412,18 @@
 
         </a>
 
-        <!-- 第二节课 -->
-        <a class="course-card"
-           href="session2.pdf"
-           target="_blank"
-           rel="noopener noreferrer">
 
-          <span class="course-number">02</span>
+        <!-- Session 2 -->
+        <a
+          class="course-card"
+          href="session2.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <span class="course-number">
+            02
+          </span>
 
           <span class="course-info">
             <h3>Session 2</h3>
@@ -326,13 +436,18 @@
 
         </a>
 
-        <!-- 第三节课 -->
-        <a class="course-card"
-           href="session3.pdf"
-           target="_blank"
-           rel="noopener noreferrer">
 
-          <span class="course-number">03</span>
+        <!-- Session 3 -->
+        <a
+          class="course-card"
+          href="session3.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <span class="course-number">
+            03
+          </span>
 
           <span class="course-info">
             <h3>Session 3</h3>
@@ -346,10 +461,16 @@
         </a>
 
       </div>
+
     </div>
+
   </main>
 
-  <!-- 底部 -->
+
+  <!-- ======================
+       网站底部
+       ====================== -->
+
   <footer>
     Questionnaire Survey · 课程学习页面
   </footer>

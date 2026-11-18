@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -9,7 +10,11 @@
   <title>问卷调查研究方法 | Questionnaire Survey</title>
 
   <style>
-    /* 全局设置 */
+
+    /* ==========================
+       1. 全局设置
+       ========================== */
+
     * {
       box-sizing: border-box;
     }
@@ -21,7 +26,8 @@
     body {
       margin: 0;
       font-family: "Microsoft YaHei",
-        "PingFang SC", Arial, sans-serif;
+                   "PingFang SC",
+                   Arial, sans-serif;
       color: #242631;
       background-color: #E8EDF3;
       line-height: 1.6;
@@ -32,6 +38,11 @@
       margin: 0 auto;
       padding: 0 24px;
     }
+
+
+    /* ==========================
+       2. 顶部 Logo 区域
+       ========================== */
 
     .site-header {
       background-color: #0B1929;
@@ -53,20 +64,23 @@
       align-items: center;
       gap: 24px;
       flex-wrap: wrap;
+      min-width: 0;
     }
 
     .brand-logo {
       display: block;
-      max-height: 75px;
-      max-width: 100%;
       width: auto;
       height: auto;
+      max-height: 85px;
+      max-width: 100%;
       object-fit: contain;
     }
 
+    /* 右侧课程平台说明 */
+
     .brand-note {
       text-align: right;
-      border-left: 3px solid #0B1929;
+      border-left: 3px solid #8FA9C0;
       padding-left: 18px;
       flex-shrink: 0;
     }
@@ -84,6 +98,11 @@
       font-size: 12px;
       letter-spacing: 1px;
     }
+
+
+    /* ==========================
+       3. 暗蓝色课程标题区域
+       ========================== */
 
     .hero {
       background-color: #0B1929;
@@ -118,6 +137,11 @@
       margin: 0;
     }
 
+
+    /* ==========================
+       4. 课程目录区域
+       ========================== */
+
     .courses {
       background-color: #E8EDF3;
       padding: 70px 0 85px;
@@ -146,7 +170,11 @@
       gap: 18px;
     }
 
-    /* 课程卡片 */
+
+    /* ==========================
+       5. 课程卡片设计
+       ========================== */
+
     .course-card {
       display: flex;
       align-items: center;
@@ -165,10 +193,9 @@
       border-color: #46617D;
       transform: translateY(-3px);
       box-shadow: 0 10px 24px
-        rgba(11, 25, 41, 0.12);
+                  rgba(11, 25, 41, 0.12);
     }
 
-    /* 课程编号 */
     .course-number {
       flex: 0 0 62px;
       width: 62px;
@@ -206,6 +233,11 @@
       white-space: nowrap;
     }
 
+
+    /* ==========================
+       6. 网站底部
+       ========================== */
+
     footer {
       text-align: center;
       padding: 26px 20px;
@@ -214,7 +246,12 @@
       color: #687386;
       font-size: 13px;
     }
-    
+
+
+    /* ==========================
+       7. 手机和平板适配
+       ========================== */
+
     @media (max-width: 650px) {
 
       .brand-row {
@@ -228,12 +265,13 @@
       }
 
       .brand-logo {
-        max-height: 55px;
+        max-height: 65px;
+        max-width: 100%;
       }
 
       .brand-note {
-        border-left: none;
-        padding-left: 0;
+        border-left: 3px solid #8FA9C0;
+        padding-left: 12px;
         text-align: left;
       }
 
@@ -277,18 +315,25 @@
       .course-link {
         margin-left: 62px;
       }
+
     }
 
   </style>
 </head>
 
+
 <body>
+
+  <!-- ==========================
+       顶部：学校与学院 Logo
+       ========================== -->
 
   <header class="site-header">
 
     <div class="container brand-row">
 
       <div class="logo-group">
+
         <img
           src="antai-logo.png"
           alt="上海交通大学安泰经济与管理学院 Logo"
@@ -298,16 +343,23 @@
       </div>
 
       <div class="brand-note">
+
         <strong>课程教学平台</strong>
+
         <small>ONLINE COURSE</small>
+
       </div>
 
     </div>
 
   </header>
 
-  <section class="hero"
-           style="background-color: #0B1929;">
+
+  <!-- ==========================
+       课程标题区域
+       ========================== -->
+
+  <section class="hero">
 
     <div class="container">
 
@@ -315,7 +367,9 @@
         SURVEY RESEARCH METHODS
       </p>
 
-      <h1>问卷调查研究方法</h1>
+      <h1>
+        问卷调查研究方法
+      </h1>
 
       <p class="english">
         Questionnaire Survey
@@ -328,6 +382,11 @@
     </div>
 
   </section>
+
+
+  <!-- ==========================
+       在线学习课程目录
+       ========================== -->
 
   <main class="courses" id="courses">
 
@@ -347,6 +406,7 @@
       <div class="course-list">
 
         <!-- Session 1 -->
+
         <a
           class="course-card"
           href="session1.pdf"
@@ -359,8 +419,13 @@
           </span>
 
           <span class="course-info">
+
             <h3>Session 1</h3>
-            <p>第一节课 · PDF 课件</p>
+
+            <p>
+              第一节课 · PDF 课件
+            </p>
+
           </span>
 
           <span class="course-link">
@@ -371,6 +436,7 @@
 
 
         <!-- Session 2 -->
+
         <a
           class="course-card"
           href="session2.pdf"
@@ -383,8 +449,13 @@
           </span>
 
           <span class="course-info">
+
             <h3>Session 2</h3>
-            <p>第二节课 · PDF 课件</p>
+
+            <p>
+              第二节课 · PDF 课件
+            </p>
+
           </span>
 
           <span class="course-link">
@@ -395,6 +466,7 @@
 
 
         <!-- Session 3 -->
+
         <a
           class="course-card"
           href="session3.pdf"
@@ -407,8 +479,13 @@
           </span>
 
           <span class="course-info">
+
             <h3>Session 3</h3>
-            <p>第三节课 · PDF 课件</p>
+
+            <p>
+              第三节课 · PDF 课件
+            </p>
+
           </span>
 
           <span class="course-link">
@@ -424,8 +501,14 @@
   </main>
 
 
+  <!-- ==========================
+       网站底部
+       ========================== -->
+
   <footer>
+
     Questionnaire Survey · 课程学习页面
+
   </footer>
 
 </body>
